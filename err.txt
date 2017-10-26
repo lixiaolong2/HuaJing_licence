@@ -1,0 +1,33 @@
+1.SecretKey error or JSON error   secretkey错误或JSON错误
+2.Unknown API ID     未知的接口
+3.Unknown action 未知动作 
+4.API permission denied   api权限被拒绝
+
+11.Add licence permission denied 添加许可证拒绝
+12.Edit licence permission denied 编辑许可证许可被拒绝
+
+21.Option 'QQ' error 选择qq错误
+22.The date is invalid 日期无效
+23.Option 'Year' error 选择年的错误
+24.Option 'Month' error 选择月错误
+25.Option 'Day' error 选择日错误
+26.Option 'Year' must be 4-digit  选择年必须4位长度
+27.Option 'Month' must be 2-digit 选择月必须2位长度
+28.Option 'Day' must be 2-digit   选择天必须2位长度
+29.Option 'QQ' can't be blank     选项qq不能空白
+30.Test error        测试错误
+31.Option 'Type' is invalid  选项类型无效
+32.If you want to cut down the date, you must refund   如果你想减少日期，你必须退款
+33.You can't edit the number of QQ licensed   你不能编辑的号码的qq授权
+34.This licence is not own to you, you only have right to renew, otherwise you should transfer first  本许可证不属于你自己，你只有权利更新，否则你应该先转让
+
+40.This order is not the final order of this licence  本许可证并不是本牌照的最终顺序
+41.The licence of this order has expired  该订单的牌照已过期
+42.This order didn't change the date  这个订单没有改变日期
+43.This order is not refundable  本订单概不退还
+44.The OrderID is invalid    行是无效的。
+45.Can't find any order   找不到任何订单
+
+50.Licence ID not found  未找到许可证
+51.You are already the owner of the licence   你已经是该牌照的主人了
+1000.Unknown error   未知错误
