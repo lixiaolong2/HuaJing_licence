@@ -1,7 +1,7 @@
 ﻿<?php
 header("Content-type: text/html; charset=gb2312");
 include "api.inc.php";
-$ID=17;//API id
+$ID=0;//API id
 $key="---------";
 
 //先判断通讯
