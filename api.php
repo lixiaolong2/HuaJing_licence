@@ -1,16 +1,16 @@
-<?php
+ï»¿<?php
 header("Content-type: text/html; charset=gb2312");
 include "api.inc.php";
 $ID=17;//API id
 $key="---------";
 
-//ÏÈÅĞ¶ÏÍ¨Ñ¶
-if(!is_array($_GET) || count($_GET)<=0){//ÏÈÅĞ¶ÏÊÇ·ñÍ¨¹ıget´«ÖµÁË
+//å…ˆåˆ¤æ–­é€šè®¯
+if(!is_array($_GET) || count($_GET)<=0){//å…ˆåˆ¤æ–­æ˜¯å¦é€šè¿‡getä¼ å€¼äº†
 	header('HTTP/1.1 404 Not Found');
 	exit;
 }
 
-if($_GET["type"]=="test"){//Í¨ĞÅ²âÊÔ
+if($_GET["type"]=="test"){//é€šä¿¡æµ‹è¯•
 	echo "success";
 	exit;
 }
@@ -18,7 +18,7 @@ if($_GET["type"]=="test"){//Í¨ĞÅ²âÊÔ
 $api = new Licence_API($ID, $key);
 
 
-if($_GET["type"]=="licence_detail"){//ÊÚÈ¨²éÑ¯ Á½¸öoptions ¿ÉÒÔ¶şÑ¡Ò»
+if($_GET["type"]=="licence_detail"){//æˆæƒæŸ¥è¯¢ ä¸¤ä¸ªoptions å¯ä»¥äºŒé€‰ä¸€
 	$detail_act['act'] = "licence_detail";
 	$detail_act['options']['LicenceID'] = $_GET["LicenceID"];
 	$detail_act['options']['QQ'] = $_GET["QQ"];
@@ -30,21 +30,21 @@ if($_GET["type"]=="licence_detail"){//ÊÚÈ¨²éÑ¯ Á½¸öoptions ¿ÉÒÔ¶şÑ¡Ò»
 	exit;
 }
 
-if($_GET["type"]=="licence_add"){//ÊÚÈ¨Ìí¼Ó
+if($_GET["type"]=="licence_add"){//æˆæƒæ·»åŠ 
 
 	$add_act['act'] = "licence_add";
 	if($_GET["Preview"]=="true"){
-		$add_act['options']['Preview'] = true;//Ô¤ÀÀ¼Û¸ñ
+		$add_act['options']['Preview'] = true;//é¢„è§ˆä»·æ ¼
 	}else{
-		$add_act['options']['Preview'] = false;//Ìá½»¶©µ¥
+		$add_act['options']['Preview'] = false;//æäº¤è®¢å•
 	}
 
-	$add_act['options']['QQ'] = $_GET["QQ"];//  ·Ö¸î\r\n
+	$add_act['options']['QQ'] = $_GET["QQ"];//  åˆ†å‰²\r\n
 
-	//$add_act['options']['QQ']¿ÉÒÔÊÇ×Ö·û´®Ò²¿ÉÒÔÊÇÊı×é
-	//ÀıÈç
+	//$add_act['options']['QQ']å¯ä»¥æ˜¯å­—ç¬¦ä¸²ä¹Ÿå¯ä»¥æ˜¯æ•°ç»„
+	//ä¾‹å¦‚
 	//$add_act['options']['QQ'] = array("724583668");
-	//¶à¸öqqÀı×Ó
+	//å¤šä¸ªqqä¾‹å­
 	//$add_act['options']['QQ'] = "724583668\r\nGGPSB"
 	//$add_act['options']['QQ'] = array("724583668", "GGPSB");
 
@@ -65,7 +65,7 @@ if($_GET["type"]=="licence_add"){//ÊÚÈ¨Ìí¼Ó
 	exit;
 }
 
-if($_GET["type"]=="licence_transfer"){//Ìá½»¹ı»§ÉêÇë
+if($_GET["type"]=="licence_transfer"){//æäº¤è¿‡æˆ·ç”³è¯·
 	$transfer_act['act'] = "licence_transfer";
 	$transfer_act['options']['LicenceID'] = $_GET["LicenceID"];
 	$transfer_act['options']['Note'] = $_GET["Note"];
@@ -77,11 +77,11 @@ if($_GET["type"]=="licence_transfer"){//Ìá½»¹ı»§ÉêÇë
 exit;
 }
 
-if($_GET["type"]=="order_detail"){//¶©µ¥ÏêÇé
+if($_GET["type"]=="order_detail"){//è®¢å•è¯¦æƒ…
 	
 	$order_detail_act['act'] = "order_detail";
 	$order_detail_act['options']['LicenceID'] = $_GET["LicenceID"];
-	$order_detail_act['options']['OrderID'] = $_GET["OrderID"];//Áô¿Õ²é¶©µ¥ºÅ
+	$order_detail_act['options']['OrderID'] = $_GET["OrderID"];//ç•™ç©ºæŸ¥è®¢å•å·
 	
 	$api_return = $api->act($order_detail_act);
 	
@@ -89,14 +89,14 @@ if($_GET["type"]=="order_detail"){//¶©µ¥ÏêÇé
 	echo json_encode($api_return);
 	exit;
 }
-if($_GET["type"]=="licence_edit"){////ÊÚÈ¨ĞŞ¸Ä
+if($_GET["type"]=="licence_edit"){////æˆæƒä¿®æ”¹
 	
 	$edit_act['act'] = "licence_edit";
 	$edit_act['options']['LicenceID'] = $_GET["LicenceID"];
 	if($_GET["Preview"]=="true"){
-		$edit_act['options']['Preview'] = true;//Ô¤ÀÀ¼Û¸ñ
+		$edit_act['options']['Preview'] = true;//é¢„è§ˆä»·æ ¼
 	}else{
-		$edit_act['options']['Preview'] = false;//Ìá½»¶©µ¥
+		$edit_act['options']['Preview'] = false;//æäº¤è®¢å•
 	}
 	$edit_act['options']['Date']['Year'] =  $_GET["Year"];
 	$edit_act['options']['Date']['Month'] =  $_GET["Month"];
@@ -115,13 +115,13 @@ if($_GET["type"]=="licence_edit"){////ÊÚÈ¨ĞŞ¸Ä
 	echo json_encode($api_return);
 	exit;
 }
-if($_GET["type"]=="licence_detail"){//È¡Ïû¶©µ¥
+if($_GET["type"]=="licence_detail"){//å–æ¶ˆè®¢å•
 	
 	$order_refund_act['act'] = "licence_detail";
 		if($_GET["Preview"]=="true"){
-			$order_refund_act['options']['Preview'] = true;//Ô¤ÀÀ¼Û¸ñ
+			$order_refund_act['options']['Preview'] = true;//é¢„è§ˆä»·æ ¼
 		}else{
-			$order_refund_act['options']['Preview'] = false;//Ìá½»¶©µ¥
+			$order_refund_act['options']['Preview'] = false;//æäº¤è®¢å•
 		}
 	
 	$order_refund_act['options']['OrderID'] =$_GET["OrderID"];
