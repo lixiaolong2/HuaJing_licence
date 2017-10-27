@@ -1,46 +1,17 @@
 <?php
 header("Content-type: text/html; charset=gb2312");
 include "api.inc.php";
-$ID=17;
+$ID=17;//API id
 $key="---------";
-$password="网站密码";
+
 //先判断通讯
 if(!is_array($_GET) || count($_GET)<=0){//先判断是否通过get传值了
 	header('HTTP/1.1 404 Not Found');
 	exit;
 }
+
 if($_GET["type"]=="test"){//通信测试
 	echo "success";
-	exit;
-}
-    /*
-	if(!isset($_GET["time"])){
-		header('HTTP/1.1 404 Not Found');
-		//echo "succes1s";
-		exit;
-    }
-    if(!isset($_GET["md5"])){
-		header('HTTP/1.1 404 Not Found');
-		//echo "succes2s";
-		exit;
-    }
-	if(md5($_GET["time"]+$password)!=$_GET["md5"]){
-		header('HTTP/1.1 404 Not Found');
-		//echo md5($_GET["time"]+$password);
-		exit;
-	}
-	if(time()-$_GET["time"]>60){
-		header('HTTP/1.1 404 Not Found');
-		//echo "succes4s";
-		exit;
-	}
-	
-	*/
-
-
-
-if(!isset($_GET["type"])){//是否存在"id"的参数
-	header('HTTP/1.1 404 Not Found');
 	exit;
 }
 
@@ -60,7 +31,6 @@ if($_GET["type"]=="licence_detail"){//授权查询 两个options 可以二选一
 }
 
 if($_GET["type"]=="licence_add"){//授权添加
-	//http://127.0.0.1:8080/pay/api.php?type=licence_add&Preview=true&QQ=724583668&Type=Vip&Email=&ServiceQQ&Taobao=1000&Service=1000&Note=2100&Year=2018&Month=12&Day=25
 
 	$add_act['act'] = "licence_add";
 	if($_GET["Preview"]=="true"){
