@@ -30,4 +30,5 @@
 
 50.Licence ID not found  未找到许可证
 51.You are already the owner of the licence   你已经是该牌照的主人了
+52. 该QQ已经被拉黑
 1000.Unknown error   未知错误
