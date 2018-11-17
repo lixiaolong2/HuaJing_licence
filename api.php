@@ -115,9 +115,9 @@ if($_GET["type"]=="licence_edit"){////授权修改
 	echo json_encode($api_return);
 	exit;
 }
-if($_GET["type"]=="licence_detail"){//取消订单
+if($_GET["type"]=="order_refund"){//取消订单
 	
-	$order_refund_act['act'] = "licence_detail";
+	$order_refund_act['act'] = "order_refund";
 		if($_GET["Preview"]=="true"){
 			$order_refund_act['options']['Preview'] = true;//预览价格
 		}else{
